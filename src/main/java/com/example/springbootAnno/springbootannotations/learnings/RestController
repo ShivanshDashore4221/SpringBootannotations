@@ -1,0 +1,33 @@
+@RestController
+
+-- used to define a RESTful web service controller when we have to work with web services
+-- The very first point when API get HIT.
+-- Introduced in Spring 4.x version to replace (@Controller + @ResponseBody)
+
+-- When we annotate a class with it, Spring Automatically serializes the return value of the methods within the class into JSON/XML (depending on the config -> the content type requested by the client) and sends it back to the client
+ SO MANUAL SERIALIZATION OF OBJECTS NOT REQUIRED.
+
+ @Controller will be used with MVC projects
+
+ @RestController will be used with RESTful web services
+
+
+------------@GetMapping-------------
+
+->shortCut for @RequestMapping(method = RequestMethod.GET)... only for mapping HTTP GET requests
+-> finds errors at compile time if used on a method that doesn't support GET requests.
+
+-> multiple uri can be given in braces --> @GetMapping({"/getEmpDetail","getDetail"}
+-> produces and consumes can also be used
+
+---------@PostMapping--------------
+
+-> used in Spring MVC to map http POST requests to handler methods in controller
+->shortCut for @RequestMapping(method = RequestMethod.POST)... only for mapping HTTP POST requests
+-> both give consise, readability, expressive code
+
+---------@RequestBody---------------
+
+-> used along with @PostMapping, @PutMapping , @PatchMapping to indicate that a method parameter should be bound to body of the http request. mapping to a Java POJO class
+--> used to capture the payload
+-> used to transform the request data into a pojo class

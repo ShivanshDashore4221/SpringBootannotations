@@ -1,0 +1,36 @@
+@Controller
+
+-- it is the specification of main stereotype annotation i.e @Component
+-- used in building web applications with Spring MVC
+-- class level annotation
+--when applied to class, @Controller annotation indicates that class serves as a controller in MVC architecture, i.e. handling user requests, processing and returning an appropriate response.
+-- works with @RequestMapping to define URL mappings for handling HTTP requests.
+-- controllers responsible for handling user requests, processing them and returning appropriate response.
+--IoC container will segregate such classes as controllers
+-- we create endpoints in controllers using @GetMapping("/endpt") on method.
+-- @ResponseBody is also required on method level for running.
+-- so first we check in which controller does the given endpoint exist and then it will respond.
+
+@Service
+ -- used to indicate that a class is a service
+ -- Service layer is used to encapsulate business logic and  perform various operations
+ -- allows other components such as controllers to easily inject and use instances of the annotated class.
+
+ Purpose of Service :
+ 1. Organization and categorization of codebase, makes more readable.
+2. Component Scanning process ke dauran this service class is automatically detected and marked as a bean.
+3. Dependency Injection with @Autowired. Helps in achieving a loosely coupled design where components depend on abstractions rather than concrete implementations.
+4. @Transactional is used for declarative transactional management
+
+@Repository
+
+-- it is a class level annotation responsible for indicating that a class is repository and that bean is responsible for encapsulating interaction with a data source/ db.
+-- For CRUD ops on entities
+-- basically, if class is @Repository, it informs spring framework to enable features like exception translation for db specific exceptions into Spring's "DataAccessException".
+-- we can also use it for accessing external systems and services not just db ops.
+-- service class mein hi repo ka field injection karte hai.
+
+Purpose of REPO :
+1. simplification of Exception handling by exception translation :-- DataAccessException
+2. Detected during Component Scanning as a bean
+3. used with Spring Data JPA or other data modules.

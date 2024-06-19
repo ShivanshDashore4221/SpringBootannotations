@@ -1,0 +1,10 @@
+@Component
+
+- It is a Class level annotation;
+- It is a marker for any java class that its object must be handled by Spring framework container.
+-- a streotype annotation are a specific type of annotation that can be used to mark classes as having a particular role or purpose within the application
+- With this, we tell the spring framework to create a bean for the class and as developer we don't need to manually create object/ instances of the bean.
+- 3 other annotations used while marking a class as @Component :
+    -@Service
+    -@Repository
+    -@Controller

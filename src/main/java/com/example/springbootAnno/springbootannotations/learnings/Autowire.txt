@@ -1,0 +1,22 @@
+@Autowired
+- it is used for automatic dependency injection.
+
+- DI is a design pattern that removes dependency from programming code so loosely coupled.
+- so easy for managing and testing.
+
+- autowiring enables to inject the object dependency implicitly
+-- internally uses setter injection,
+                   constructor injection,
+                   field injection
+
+- autowiring of primitive or string values not possible. only of references done.
+
+@Qualifier("")
+
+used along with autowired for cases if we have more than one bean of the same type and want to specify one of them to be wired.
+-- name of bean in such annotations is always with first letter **lowercase**.
+--written at place of class where injection is done
+
+@Primary
+-- used to give higher preference to a bean where ambiguity of multiple beans of same type. removes confusion of the IoC container
+-- written over the bean definition and not in the usage place

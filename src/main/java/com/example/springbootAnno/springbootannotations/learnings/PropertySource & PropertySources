@@ -1,0 +1,24 @@
+@PropertySource --> used to provide access to custom properties file to Spring Environment
+
+@PropertySources --> used to provide access to multiple properties files to spring environment.
+ We by default have the "application.properties" file to be used by the Spring Container.
+ But, To have other custom properties files and provide its access to Spring IoC Container, we need to use @PropertySource
+ BOTH USED WITH @Configuration based Classes.
+
+ @PropertySource annotation is repeatable.
+ We use @value and Environment class to read the property file.
+
+ We made a different class as with @Configuration. So when we run SpringBootApplication, the beans are made first and this configuration bean serves as config providing access to the custom properties files.
+--@Configuration
+--@PropertySource("classpath:db.properties")
+--@PropertySource("classpath:mail.properties")
+--public class DemoConfig {
+--}
+
+Also, The @PropertySource is repeatable.
+
+Now using @PropertySources for multiple @PropertySource, we give an array (PropertySource[]) as argument in annotation.
+--@PropertySources({
+--        @PropertySource("classpath:db.properties"),
+--        @PropertySource("classpath:mail.properties")
+--})

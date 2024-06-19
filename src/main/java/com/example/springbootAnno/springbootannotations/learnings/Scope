@@ -1,0 +1,21 @@
+@Scope
+ used to define scope of a bean (i.e till where and when bean can be accessed)
+
+Types :
+1. @Scope("singleton") :- default
+                        - only one instance of bean will be created for the entire spring container
+                        - useful for stateless and stateful beans that can be safely shared.
+2. Scope("prototype") :-  A new instance will be created every time requested.
+                       - useful for stateful beans and when we want to control the lifecycle of bean explicitly.
+
+3. @Scope("request") :-  A new instance created for each http request.
+                       - This is valid only for a web-aware Spring ApplicationContext
+
+4. @Scope("session") :- A new instance of the bean is created for every http session.
+                      - applicable in web applications
+
+5. @Scope("globalSession") :- similar to session, but for portlet based web applications
+
+6. @Scope("application") :- single instance created for a ServletContext.
+
+-- @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON) THIS IS ALSO A WAY TO WRITE IT.

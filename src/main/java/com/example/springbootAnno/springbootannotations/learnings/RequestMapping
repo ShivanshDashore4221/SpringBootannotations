@@ -1,0 +1,26 @@
+@RequestMapping
+-> used to map HTTP requests to specific handler methods in your app's controller classes.
+-> used in controller class
+-> makes base uri for that controller.
+-> used on method level for providing uri to that specific endpoint.
+
+@RequestMapping with class
+--> @RequestMapping("/xadmin") // Base endpoint to run this controller CLASS LEVEL KE SAATH USE
+                            //so now the url will be lhost:8080/xadmin/getEmployeeDetail
+@RequestMapping with Method
+--> @RequestMapping("/getEmployeeDetail") // METHOD USAGE ...by Default, get() method used
+
+@RequestMapping with Multiple URI
+--> @RequestMapping (value = {"/getEmployeeDetail","getDetail", "getEmployee"})
+
+@RequestMapping with HTTP Method
+--> @RequestMapping (value = {"/getEmployeeDetail","getDetail", "getEmployee"},
+method = RequestMethod.GET) // can be POST,PUT,PATCH,DELETE (GET by Default)
+
+@RequestMapping with Produces and Consumes
+ "produces" means produce in which format ie JSON or xml etc and "consumes" means consume in which format
+--> @RequestMapping (value = {"/getEmployeeDetail","getDetail", "getEmployee"},
+produces= MediaType.APPLICATION_JSON_VALUE , consumes= MediaType.APPLICATION_XML_VALUE )
+-->Multiple formats dene ke liye use curly braces :- produces= {MediaType.APPLICATION_JSON_VALUE , MediaType.APPLICATION_XML_VALUE}
+
+@GetMapping is the combo of RequestMapping And http Get Method

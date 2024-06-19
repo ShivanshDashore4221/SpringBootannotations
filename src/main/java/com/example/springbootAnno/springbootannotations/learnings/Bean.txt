@@ -1,0 +1,15 @@
+@Bean
+
+-- used to define a method that produces a bean to be managed by the Spring IoC Container.
+-- used to create and configure beans in java-based configuration.
+-- uses initMethod and destroyMethod to perform some logic before bean initialization and after bean destruction.
+-- used in class having @Configuration annotation.
+
+Purpose of @Bean:
+1. managing the life cycle of bean by Spring Container.
+2. helps in configuration and customization of a bean.
+3. Dependency injection
+4. Helpful in customizing bean names for better referral.
+
+ @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
+ This is the way to write method names. Yahi methods ko ab below mentioned wali class mein define karo.

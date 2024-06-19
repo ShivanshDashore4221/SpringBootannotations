@@ -1,0 +1,16 @@
+@Lazy
+
+It is used to indicate that a bean should be lazily initialized.
+-- very effective for optimizing resource usage by delaying creation of a bean until it is required
+
+Normal init : Spring initializes all beans eagerly when application context is being created. (eager init)
+Lazy init : defers initialization until demanded
+
+-- depends on specific use cases not useful all time.
+
+Purpose of LAZY :
+1. deferred initialization
+2. improve startup performance of spring boot application
+3. optimize in cases of beans with resource intensive operation
+4. Helps in resolving Circular Dependencies
+and breaks the circular reference cycle.
