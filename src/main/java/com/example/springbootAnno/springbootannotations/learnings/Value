@@ -2,3 +2,6 @@
 - used for injecting values into fields in a spring bean
 - can be applied to fields, methods,constructor parameters
 - allows to inject values from various sources like property files , env variables, System variables,other beans etc
+
+Eg. @Value('${user.port}')
+  private String userPortNo;
