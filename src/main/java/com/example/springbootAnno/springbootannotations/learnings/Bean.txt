@@ -13,3 +13,11 @@ Purpose of @Bean:
 
  @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
  This is the way to write method names. Yahi methods ko ab below mentioned wali class mein define karo.
+
+@PostConstruct(eg. populating the db)  &  @PreDestroy(eg. db.close()) can be used with methods to be called after bean initialization and before bean destruction
+(<dependency>
+    <groupId>javax.annotation</groupId>
+    <artifactId>javax.annotation-api</artifactId>
+    <version>1.3.2</version>
+</dependency>
+) ----> additional dependency required in java 11+ to use these annotations. 
